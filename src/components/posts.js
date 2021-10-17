@@ -9,7 +9,7 @@ const Posts = () => {
         const resp = await fetch(
           'https://backend.markyamhs.workers.dev/posts',
           {
-            mode: 'no-cors',
+            mode: 'cors',
             method: "get"
           }
         );
