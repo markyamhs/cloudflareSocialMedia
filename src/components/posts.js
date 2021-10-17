@@ -5,17 +5,21 @@ const Posts = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const resp = await fetch(
-        'https://backend.markyamhs.workers.dev/posts',
-        {
-          mode: 'no-cors',
-          method: "get"
-        }
-      );
-      console.log(resp);
-      const postResp = await resp.json();
-      //console.log(postResp);
-      setPosts(postResp);
+      try{
+        const resp = await fetch(
+          'https://backend.markyamhs.workers.dev/posts',
+          {
+            mode: 'no-cors',
+            method: "get"
+          }
+        );
+        console.log(resp);
+        const postResp = await resp.json();
+        console.log(postResp);
+        setPosts(postResp);
+      }catch(e){
+        console.log(e)
+      }
     };
 
     getPosts();
