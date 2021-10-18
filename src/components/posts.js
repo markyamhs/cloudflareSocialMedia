@@ -1,42 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Post from "./post"
+import { Stack, Container } from "react-bootstrap"
 
-const Posts = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      try{
-        const resp = await fetch(
-          'https://backend.markyamhs.workers.dev/posts',
-          {
-            mode: 'cors',
-            method: "get"
-          }
-        );
-        console.log(resp);
-        const postResp = await resp.json();
-        console.log(postResp);
-        setPosts(postResp);
-      }catch(e){
-        console.log(e)
-      }
-    };
-
-    getPosts();
-  }, []);
-
+const Posts = ({posts}) => {
   return (
-    <div>
-        {posts.map((post,index) => (
-        <div key={index}>
-          <h2>
-            <p>{post.title}</p>
-            <p>{post.username}</p>
-            <p>{post.content}</p>
-          </h2>
-        </div>
-        ))}
-    </div>
+    <Container>
+      <Stack gap={3}>
+          {posts.map((post,index) => (
+            <Post post={post} key={index}/>
+          ))}
+      </Stack>
+    </Container>
   );
 };
 
