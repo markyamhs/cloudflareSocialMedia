@@ -14,10 +14,10 @@ const Topbar =({ username, handleLogin }) =>{
                     height="30"
                     className="d-inline-block align-top"
                     />{' '}
-                Cloudflare's Fake Twitter
+                Mark's Fake Twitter
                 </Navbar.Brand>
                 <Navbar.Collapse className="justify-content-end">
-                    <Navbar.Text>
+                    <Navbar.Text style={{paddingRight: "20px"}}>
                         {username.length!=0? `Signed in as: ${username}`:"Not yet logged in!"}
                     </Navbar.Text>
                     <Button onClick={handleLogin}>Switch account</Button>

@@ -7,7 +7,7 @@ const Layout =({ children, username, handleLogin }) =>{
         <div>
             <TopBar username={username} handleLogin={handleLogin}/>
         </div>
-        <main>{children}</main>
+        <main style={{padding: "20px"}}>{children}</main>
         </>
     )
 }

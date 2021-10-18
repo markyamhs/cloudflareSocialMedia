@@ -32,18 +32,20 @@ const SubmitForm = ({query, setQuery, username}) => {
     setContent("")
   }
   return (
-    <Container>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Your post title</Form.Label>
-            <Form.Control type="text" placeholder="Your post title" value={title} onChange={onTitleChange} required/>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Your post content</Form.Label>
-            <Form.Control as="textarea" placeholder="Your post content" value={content} onChange={onContentChange} required rows={3} />
-        </Form.Group>
-        <Button variant="primary" type="button" onClick={handleSubmit}>
-            Submit
-        </Button>
+    <Container style={{padding: "20px"}}>
+        <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Your post title</Form.Label>
+                <Form.Control type="text" placeholder="Your post title" value={title} onChange={onTitleChange} required/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Your post content</Form.Label>
+                <Form.Control as="textarea" placeholder="Your post content" value={content} onChange={onContentChange} required rows={3} />
+            </Form.Group>
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
+                Submit
+            </Button>
+        </Form>
     </Container>
   );
 };

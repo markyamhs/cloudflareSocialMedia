@@ -39,7 +39,7 @@ function App() {
         <h4>Welcome, {username}!</h4>
       </Container>
       <SubmitForm {...{query, setQuery, username}}/>
-      <Posts posts={posts}/>
+      <Posts {...{query, setQuery, username, posts}}/>
     </Layout>
   );
 }
