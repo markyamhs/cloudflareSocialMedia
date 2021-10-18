@@ -9,6 +9,7 @@ const SubmitForm = ({query, setQuery, username}) => {
   const onContentChange = e => setContent(e.target.value);
   
   const handleSubmit = async (e) =>{
+      e.preventDefault();
       const reqBody=JSON.stringify({
         title,
         username,

@@ -7,7 +7,8 @@ const format_time =(s)=> new Date(s).toLocaleDateString("en-US") + " "+ new Date
 const Post = ({ post, query, setQuery, appUser }) => {
   const { id, title, username, content, time, comments, upvote, downvote, heart, smile, angry, crying } = post
   const [inputComment, setComment] = useState("");
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const reqBody=JSON.stringify({
         username: appUser,
         content: inputComment
